@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+}
+body{
+    line-height: 1.5;
+    font-size: 16px;
+}
+.rectangle{
+    width: 29rem;
+    height: 6rem;
+    background-color: black;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.flex{
+    display: flex;
+    align-items: center;
+}
+.vert{
+    width: 7rem;
+    height: 16rem;
+    background-color: cadetblue;
+    border-radius: 5px;
+}
+
+.container{
+    max-width: 600px;
+    margin: 0 auto; 
+}
+
+.flex-30{
+    flex: 0 1 32%;
+    font-size: 2rem
+}
+.wrap{
+    flex-wrap: wrap;
+}
+button{
+    width: 3rem;
+    height: 3rem;
+    margin: 1rem 0.2rem;
+    border-radius: 5px;
+    border: 0;
+    background-color: silver;
+    cursor: pointer;
+}
+.butt button{
+    height: 18rem;
+    width: 6rem;
+    background-color: teal;
+    border: 0;
+    border-radius: 5px;
+    font-size: 2rem;
+}
+.operator{
+    width: 8.7rem;
+    height: 3rem;
+    background-color: #700133;
+    border: 0;
+    color: white;
+    font-size: 2rem;
+    border-radius: 5px;
+}
+.rect{
+    width: 37rem;
+    height: 6rem;
+    background-color: black;
+    color: white;
+    border-radius: 7px;
+    font-size: 4rem;
+    text-align: end;
+}
+.reset{
+    background-color: #700133;
+    color: white;
+}
