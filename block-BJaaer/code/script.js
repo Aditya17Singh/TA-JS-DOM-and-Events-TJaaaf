@@ -5,6 +5,7 @@ let body = document.querySelector("body");
 let userInfo = {};
 
 function handleSubmit(event){
+    userInfo.innerHTML = "";
     event.preventDefault();
     userInfo.color = form.elements.color.value;
     userInfo.email = form.elements.email.value;
@@ -40,14 +41,14 @@ function handleSubmit(event){
     div.append(p7);
     document.querySelector(".container").style.display = "none";
     div.style.display = "block";
-    let btn = document.createElement("button");
+    let btn = document.createElement("span");
     btn.classList.add("btn")
     btn.innerText = "close";
     div.append(btn);
-    // btn.addEventListener("click" , () => {
-    //     div.close();
-    //     form.show();
-    // })
+    btn.addEventListener("click" , () => {
+        div.classList.remove("wrapper");
+        form.style.display = "block"
+    })
 }
 
 form.addEventListener("submit" , handleSubmit);
