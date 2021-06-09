@@ -2,12 +2,12 @@ let userNameError = "";
 
 let form = document.querySelector("form");
 
-function doesContainNumber(str){
-   return str.split("").some(e => Number(e))
-}
-function doesContain(str){
-    return str.split("").includes("@")
-}
+// function doesContainNumber(str){
+//    return str.split("").some(e => Number(e))
+// }
+// function doesContain(str){
+//     return !str.includes("@")
+// }
 
 function handleSubmit(event){
     event.preventDefault();
@@ -18,18 +18,27 @@ function handleSubmit(event){
     if(userNameElm.value === ""){
        userNameError = "Can't be empty";
        userNameElm.nextElementSibling.innerText = userNameError;
-    }else if(userNameElm.value.length < 4){
+    }else if(userNameElm.value.length <= 4){
        userNameError = "username cannot be less than 4 characters"
        userNameElm.nextElementSibling.innerText = userNameError;
-    }else if(doesContainNumber(name.value)){
-        userNameError = "cannot be a number"
+    }else{
+       userNameElm.nextElementSibling.innerText = "";
+       userNameError = "";
+    }if(!isNaN(name.value)){
+        userNameError = "cant be a number"
         name.nextElementSibling.innerText = userNameError;
-     }else if(!doesContain(email.value)){
+    }else{
+        name.nextElementSibling.innerText = "";
+        userNameError = "";
+    }if(!(email.value).includes("@")){
         userNameError = "must contain @"
-        email.nextElementSibling.innerText = userNameError
-    }else if (email.value.length < 6){
-        userNameError = "must be atleast 6 characters";
         email.nextElementSibling.innerText = userNameError;
-    }
+    }else if(email.length < 6){
+        userNameError = "Email must be 6 characters"
+        email.nextElementSibling.innerText = userNameError;
+     }else{
+        email.nextElementSibling.innerText = "";
+        userNameError = "";
+     }
 }
 form.addEventListener("submit",handleSubmit);
