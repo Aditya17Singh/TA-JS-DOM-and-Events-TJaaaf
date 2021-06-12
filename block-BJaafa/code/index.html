@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chrome Extension</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>image-resize</title>
+</head>
+<body>
+    <div class="inputs">
+        <h1>
+            Resize your Image
+        </h1>
+        <form>
+            <label for="file" class="upload">Upload an Image</label>
+            <input type="file" id="file" accept="image/*" onchange="loadImage(event)">
+
+            <label for="">width</label>
+            <input type="number" id="imWidth" placeholder="Enter width in px">
+
+            <label for="">Height</label>
+            <input type="number" id="imHeight" placeholder="Enter height in px">
+        </form>
+        <button type="submit" id="preview">Preview</button>
+    </div>
+
+    <div class="wrapper">
+        <canvas id="result">
+            <img src="" id="imgDisplayed" alt="">
+        </canvas>
+    </div>
     <script src="./script.js"></script>
-  </body>
+</body>
 </html>
